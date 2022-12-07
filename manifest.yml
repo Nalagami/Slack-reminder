@@ -1,0 +1,30 @@
+display_information:
+  name: reminder_maker
+features:
+  bot_user:
+    display_name: reminder_maker
+    always_online: false
+  shortcuts:
+    - name: リマインダーセット
+      type: global
+      callback_id: socket-mode-shortcut
+      description: リマインドコマンド生成
+oauth_config:
+  scopes:
+    bot:
+      - channels:history
+      - chat:write
+      - reminders:write
+      - reminders:read
+      - commands
+settings:
+	event_subscriptions:
+    request_url: https://example.com # イベント送信先。後で変えるので一旦適当
+    bot_events:
+      - message.channels
+  interactivity:
+    is_enabled: true
+    request_url: https://example.com # イベント送信先。後で変えるので一旦適当
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
